@@ -1,0 +1,41 @@
+#BlueJ class context
+comment0.params=game\ iAmRed
+comment0.target=MyAgent(Connect4Game,\ boolean)
+comment0.text=\r\n\ Constructs\ a\ new\ agent,\ giving\ it\ the\ game\ and\ telling\ it\ whether\ it\ is\ Red\ or\ Yellow.\r\n\ \r\n\ @param\ game\ The\ game\ the\ agent\ will\ be\ playing.\r\n\ @param\ iAmRed\ True\ if\ the\ agent\ is\ Red,\ False\ if\ the\ agent\ is\ Yellow.\r\n
+comment1.params=
+comment1.target=void\ move()
+comment1.text=\r\n\ The\ move\ method\ is\ run\ every\ time\ it\ is\ this\ agent's\ turn\ in\ the\ game.\ You\ may\ assume\ that\r\n\ when\ move()\ is\ called,\ the\ game\ has\ at\ least\ one\ open\ slot\ for\ a\ token,\ and\ the\ game\ has\ not\r\n\ already\ been\ won.\r\n\ \r\n\ By\ the\ end\ of\ the\ move\ method,\ the\ agent\ should\ have\ placed\ one\ token\ into\ the\ game\ at\ some\r\n\ point.\r\n\ \r\n\ After\ the\ move()\ method\ is\ called,\ the\ game\ engine\ will\ check\ to\ make\ sure\ the\ move\ was\r\n\ valid.\ A\ move\ might\ be\ invalid\ if\:\r\n\ -\ No\ token\ was\ place\ into\ the\ game.\r\n\ -\ More\ than\ one\ token\ was\ placed\ into\ the\ game.\r\n\ -\ A\ previous\ token\ was\ removed\ from\ the\ game.\r\n\ -\ The\ color\ of\ a\ previous\ token\ was\ changed.\r\n\ -\ There\ are\ empty\ spaces\ below\ where\ the\ token\ was\ placed.\r\n\ \r\n\ If\ an\ invalid\ move\ is\ made,\ the\ game\ engine\ will\ announce\ it\ and\ the\ game\ will\ be\ ended.\r\n\ \r\n
+comment10.params=column\ slot\ myColor
+comment10.target=int\ isMyToken(int,\ int,\ boolean)
+comment10.text=\r\n\ Checks\ color\ of\ token\ at\ a\ specific\ column\ and\ slot(row).\r\n\ \r\n\ @param\ slot\ the\ value\ of\ the\ row(slot)\ to\ check\r\n\ @param\ column\ the\ value\ of\ the\ column\ to\ check\r\n\ @param\ myColor\ the\ color\ of\ the\ player.\ (red\ being\ true)\r\n\ @return\ the\ color\ of\ token\ in\ the\ slot.\ 1\ \=\ My\ Color,\ 0\ \=\ empty,\ -1\ \=\ Opponents\ Color\r\n
+comment11.params=column\ slot
+comment11.target=boolean\ slotIsPlayable(int,\ int)
+comment11.text=\r\n\ Checks\ if\ the\ slot\ at\ the\ specified\ column\ and\ slot(row)\ is\ playable.\r\n\ \r\n\ @param\ slot\ the\ value\ of\ the\ slot(row)\ to\ check\r\n\ @param\ column\ the\ value\ of\ the\ column\ to\ check\r\n\ @return\ the\ color\ of\ token\ in\ the\ slot.\ (true\ \=\ Playable)\ (False\ \=\ Not\ Playable)\r\n
+comment12.params=
+comment12.target=java.lang.String\ getName()
+comment12.text=\r\n\ Returns\ the\ name\ of\ this\ agent.\r\n\r\n\ @return\ the\ agent's\ name\r\n
+comment2.params=columnNumber
+comment2.target=void\ moveOnColumn(int)
+comment2.text=\r\n\ Drops\ a\ token\ into\ a\ particular\ column\ so\ that\ it\ will\ fall\ to\ the\ bottom\ of\ the\ column.\r\n\ If\ the\ column\ is\ already\ full,\ nothing\ will\ change.\r\n\ \r\n\ @param\ columnNumber\ The\ column\ into\ which\ to\ drop\ the\ token.\r\n
+comment3.params=column
+comment3.target=int\ getLowestEmptyIndex(Connect4Column)
+comment3.text=\r\n\ Returns\ the\ index\ of\ the\ top\ empty\ slot\ in\ a\ particular\ column.\r\n\ \r\n\ @param\ column\ The\ column\ to\ check.\r\n\ @return\ the\ index\ of\ the\ top\ empty\ slot\ in\ a\ particular\ column;\ -1\ if\ the\ column\ is\ already\ full.\r\n
+comment4.params=
+comment4.target=int\ randomMove()
+comment4.text=\r\n\ Returns\ a\ random\ valid\ move.\ If\ your\ agent\ doesn't\ know\ what\ to\ do,\ making\ a\ random\ move\r\n\ can\ allow\ the\ game\ to\ go\ on\ anyway.\r\n\ \r\n\ @return\ a\ random\ valid\ move.\r\n
+comment5.params=myColor
+comment5.target=int\ iCanWin(boolean)
+comment5.text=\r\n\ Returns\ the\ column\ that\ would\ allow\ the\ agent\ to\ win.\r\n\ \r\n\ You\ might\ want\ your\ agent\ to\ check\ to\ see\ if\ it\ has\ a\ winning\ move\ available\ to\ it\ so\ that\r\n\ it\ can\ go\ ahead\ and\ make\ that\ move.\ Implement\ this\ method\ to\ return\ what\ column\ would\r\n\ allow\ the\ agent\ to\ win.\r\n\r\n\ @return\ the\ column\ that\ would\ allow\ the\ agent\ to\ win\ or\ a\ -1\ if\ no\ winning\ move\ is\ available.\r\n
+comment6.params=myColor\ numOfTokens
+comment6.target=int\ checkVerticalWin(boolean,\ int)
+comment6.text=\r\n\ Checks\ to\ see\ if\ a\ win\ can\ be\ had\ vertically,\ within\ a\ single\ column.\r\n\ \r\n\ @param\ myColor\ the\ color\ of\ the\ player.\ (red\ being\ true)\r\n\ @param\ numOfTokens\ the\ number\ of\ matching\ tokens\ played\ consecutively\ and\ immediately\ below\ the\ next\ playable\ slot.\r\n\ @return\ the\ index\ of\ the\ winning\ (\ building/blocking\ )\ move,\ or\ -1\ if\ the\ check\ fails.\r\n
+comment7.params=myColor
+comment7.target=int\ checkHorizontalWin(boolean)
+comment7.text=\r\n\ Checks\ to\ see\ if\ a\ win\ can\ be\ had\ horizontally.\r\n\ \r\n\ @param\ myColor\ the\ color\ of\ the\ player.\ (red\ being\ true)\r\n\ @return\ the\ index\ of\ the\ winning\ move,\ or\ -1\ if\ the\ check\ fails.\r\n
+comment8.params=myColor
+comment8.target=int\ checkDiagonalWin(boolean)
+comment8.text=\r\n\ Checks\ to\ see\ if\ a\ win\ can\ be\ had\ diagonally.\r\n\ \r\n\ @param\ myColor\ the\ color\ of\ the\ player.\ (red\ being\ true)\r\n\ @return\ the\ index\ of\ the\ winning\ move,\ or\ -1\ if\ the\ check\ fails.\r\n
+comment9.params=myColor
+comment9.target=int\ winInTwo(boolean)
+comment9.text=\r\n\ Checks\ for\ the\ six\ cases\ "4\ choose\ 2"\ which\ a\ win/lose\ can\ be\ had\ \r\n\ within\ two\ moves\ on\ the\ horizontal\ plane.\r\n\ \r\n\ (_,X,_,X)\ \ \ \ (_,X,X,_)\ \ \ (X,_,_,X)\ \ \ \ \ \r\n\ \r\n\ (_,_,X,X)\ \ \ \ (X,X,_,_)\ \ \ (X,_,X,_)\ \r\n\ \r\n\ Also\ checks\ for\ two\ tokens\ stacked.\r\n\ \r\n\ \ (_)\r\n\ \ (X)\r\n\ \ (X)\r\n\ \r\n\ @param\ myColor\ the\ color\ of\ the\ player.\ (red\ being\ true)\r\n\ @return\ the\ index\ of\ the\ winning\ move,\ or\ -1\ if\ the\ check\ fails.\r\n
+numComments=13
